@@ -13,88 +13,59 @@
             background-color: #f4f4f4;
         }
         header {
-            position: relative;
-            overflow: hidden;
+            background-image: url('agriculture-header.jpg'); /* Adicionando imagem de fundo */
+            background-size: cover;
+            background-position: center;
             color: #fff;
+            padding: 50px 0;
             text-align: center;
         }
-        .slideshow {
-            display: flex;
-            width: 100%;
-            overflow: hidden;
+        nav {
+            background-color: #666;
+            padding: 10px 0;
+            text-align: center;
         }
-        .slide {
-            flex: 0 0 100%;
-            transition: transform 1s ease;
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
         }
-        .slide img {
-            width: 100%;
-            height: auto;
+        nav a:hover {
+            background-color: #999;
         }
         .container {
             max-width: 800px;
             margin: auto;
             padding: 20px;
         }
-        .btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
+        footer {
+            background-color: #333;
             color: #fff;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-        }
-        .btn-prev {
-            left: 10px;
-        }
-        .btn-next {
-            right: 10px;
+            text-align: center;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="slideshow">
-            <div class="slide"><img src="" alt="Agricultura 1"></div>
-            <div class="slide"><img src="" alt="Agricultura 2"></div>
-            <div class="slide"><img src="" alt="Agricultura 3"></div>
-        </div>
-        <button class="btn btn-prev" onclick="prevSlide()">&#10094;</button>
-        <button class="btn btn-next" onclick="nextSlide()">&#10095;</button>
-        <div class="container">
-            <h1>Automação de Processos Agrícolas</h1>
-            <p>Desenvolvendo tecnologia para o futuro da agricultura</p>
-        </div>
+        <h1>Automação de Processos Agrícolas</h1>
+        <p>Desenvolvendo tecnologia para o futuro da agricultura</p>
     </header>
-    
-    <!-- Restante do conteúdo da página -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="contato.html">Contato</a>
+    </nav>
     <div class="container">
         <h2>Bem-vindo à nossa plataforma de Automação Agrícola!</h2>
         <p>Esta é uma ferramenta desenvolvida para ajudar agricultores a automatizar e otimizar processos agrícolas.</p>
         <p>Explore nossos recursos e descubra como podemos ajudá-lo a melhorar sua produção e eficiência.</p>
     </div>
-    
-    <script>
-        // JavaScript para fazer a apresentação de slides
-        const slides = document.querySelectorAll('.slide');
-        const slideshow = document.querySelector('.slideshow');
-        let currentIndex = 0;
-
-        function prevSlide() {
-            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-            updateSlide();
-        }
-
-        function nextSlide() {
-            currentIndex = (currentIndex + 1) % slides.length;
-            updateSlide();
-        }
-
-        function updateSlide() {
-            slideshow.style.transform = `translateX(-${currentIndex * 100}%)`;
-        }
-    </script>
+    <footer>
+        <p>&copy; 2024 Automação de Processos Agrícolas. Todos os direitos reservados.</p>
+    </footer>
 </body>
 </html>
