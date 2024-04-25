@@ -1,4 +1,5 @@
-
+<style>
+/* Estilos CSS */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -6,9 +7,11 @@ body {
     background-color: #f4f4f4;
 }
 header {
-    background-color: #333;
+    background-image: url('agriculture-header.jpg'); /* Adicionando imagem de fundo */
+    background-size: cover;
+    background-position: center;
     color: #fff;
-    padding: 20px 0;
+    padding: 50px 0;
     text-align: center;
 }
 nav {
@@ -38,3 +41,4 @@ footer {
     width: 100%;
     bottom: 0;
 }
+</style>
