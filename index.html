@@ -13,59 +13,61 @@
             background-color: #f4f4f4;
         }
         header {
-            background-image: url('agriculture-header.jpg'); /* Adicionando imagem de fundo */
-            background-size: cover;
-            background-position: center;
+            position: relative;
+            overflow: hidden;
             color: #fff;
-            padding: 50px 0;
             text-align: center;
         }
-        nav {
-            background-color: #666;
-            padding: 10px 0;
-            text-align: center;
+        .slideshow {
+            display: flex;
+            width: 100%;
+            overflow: hidden;
         }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            padding: 10px 20px;
+        .slide {
+            flex: 0 0 100%;
+            transition: transform 1s ease;
         }
-        nav a:hover {
-            background-color: #999;
+        .slide img {
+            width: 100%;
+            height: auto;
         }
         .container {
             max-width: 800px;
             margin: auto;
             padding: 20px;
         }
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Automação de Processos Agrícolas</h1>
-        <p>Desenvolvendo tecnologia para o futuro da agricultura</p>
+        <div class="slideshow">
+            <div class="slide"><img src="agriculture-header1.jpg" alt="Agricultura 1"></div>
+            <div class="slide"><img src="agriculture-header2.jpg" alt="Agricultura 2"></div>
+            <div class="slide"><img src="agriculture-header3.jpg" alt="Agricultura 3"></div>
+        </div>
+        <div class="container">
+            <h1>Automação de Processos Agrícolas</h1>
+            <p>Desenvolvendo tecnologia para o futuro da agricultura</p>
+        </div>
     </header>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="sobre.html">Sobre</a>
-        <a href="contato.html">Contato</a>
-    </nav>
+    
+    <!-- Restante do conteúdo da página -->
     <div class="container">
         <h2>Bem-vindo à nossa plataforma de Automação Agrícola!</h2>
         <p>Esta é uma ferramenta desenvolvida para ajudar agricultores a automatizar e otimizar processos agrícolas.</p>
         <p>Explore nossos recursos e descubra como podemos ajudá-lo a melhorar sua produção e eficiência.</p>
     </div>
-    <footer>
-        <p>&copy; 2024 Automação de Processos Agrícolas. Todos os direitos reservados.</p>
-    </footer>
+    
+    <script>
+        // JavaScript para fazer a apresentação de slides
+        const slides = document.querySelectorAll('.slide');
+        const slideshow = document.querySelector('.slideshow');
+        let currentIndex = 0;
+
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % slides.length;
+            slideshow.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }, 3000); // Troca de imagem a cada 3 segundos (3000 milissegundos)
+    </script>
 </body>
 </html>
